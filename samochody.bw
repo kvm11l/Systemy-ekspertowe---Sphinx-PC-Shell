@@ -1,0 +1,287 @@
+knowledge base samochody
+
+facets
+	single yes;
+	typ_samochodu:
+	 query "Wybierz typ samochodu: "
+	 val oneof {"Kompakt", "SUV", "Kabriolet", "Najtanszy"};
+
+	zuzycie_paliwa:
+	 query "Wybierz zuzycie paliwa: "
+	 val oneof {"wiecej niz 8 litrow","mniej niz 8 litrow"};
+	
+	ilosc_drzwi:
+         query "Ilu drzwiowy ma byc samochod: "
+         val oneof {"3-drzwiowy", "5-drzwiowy"};
+
+	moc_silnika:
+         query "Jaka moc silnika (KM) ma miec samochod: "
+         val oneof {"<100", ">100"};
+
+	rocznik:
+       	 query "Z ktorego roku ma byc samochod: "
+       	 val oneof {"<2008", ">2008"};
+	
+	samochod :
+		ask no;
+
+end;
+
+rules
+
+1: samochod = "Toyota Yaris II Hatchback 3d 1.33 Dual VVT-i" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+2: samochod = "BMW Seria 3 E46 Coupe 316" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+3: samochod = "Smart Fortwo II Coupe 1.0 mhd" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik=">2008";
+
+4: samochod = "Toyota Yaris II Hatchback 3d 1.0 VVT-i" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+5:  samochod = "Toyota Yaris II Hatchback 5d 1.33 Dual VVT-i" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+6:  samochod = "Honda Civic VII 1.6 16V" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+7: samochod = "Toyota Yaris II Hatchback 5d 1.3 i VVT-i " if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika="<100",
+	rocznik=">2008";
+
+8: samochod = "Toyota Yaris II Hatchback 5d 1.3 i VVT-i" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+9: samochod = "BMW Seria 3 320d Coupe" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+10: samochod = "Ford Focus II Hatchback 3d 1.6 Duratec Ti-VCT" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+11: samochod = "Honda Civic VIII Hatchback 3d 1.4 i-VTEC " if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik=">2008";
+
+12: samochod = "Ford Focus II Hatchback 3d 1.4 Duratec" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+13: samochod = "Citroen C4 II 1.6 THP" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+14: samochod = "Audi A3 II 1.4 TFSI" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+15: samochod = "Citroen C4 II 1.4 Vti" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika="<100",
+	rocznik=">2008";
+
+16: samochod = "Audi A3 II 1.6 TDI" if
+	typ_samochodu="Kompakt",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+17: samochod = "Skoda Yeti Minivan 1.6 CR DPF" if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+18: samochod = "Dacia Duster I SUV 1.5 dCi eco2 " if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika="<100",
+	rocznik=">2008";
+
+19: samochod = "Suzuki Vitara I Long 2.0 TD" if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+20: samochod = "Toyota RAV4 II 1.8 VVTi " if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+21: samochod = "Honda HR-V I 1.6 i 16V 2WD" if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+22: samochod = "Suzuki Vitara I Standard 1.6 i" if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+23: samochod = "Dacia Duster I SUV 1.6 16V" if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+24: samochod = "BMW X3 E83 2.0 i" if
+	typ_samochodu="SUV",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+25: samochod = "BMW 120D CABRIO 2.0 D" if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+26: samochod = "Renault Megane 1.6 Luxe Privilege Cabrio" if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+27: samochod = "Fiat 500 1.2 8V Sport Cabrio" if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik=">2008";
+
+28: samochod = "Opel Astra H 1.6 Cabrio" if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="mniej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+29: samochod = "Peugeot 207 CC 1.6 VTi " if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+30: samochod = "MG F 1.8i" if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika=">100",
+	rocznik="<2008";
+
+31: samochod = "Citroen C3 I Pluriel 1.4 " if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="3-drzwiowy",
+	moc_silnika="<100",
+	rocznik="<2008";
+
+32: samochod = "Chrysler Sebring Cabrio 2.0" if
+	typ_samochodu="Kabriolet",
+	zuzycie_paliwa="wiecej niz 8 litrow",
+	ilosc_drzwi="5-drzwiowy",
+	moc_silnika=">100",
+	rocznik=">2008";
+
+
+33: samochod = "Nie udalo sie znalezc samochodu, typu Kabriolet o podanych atrybutach" if 
+	typ_samochodu="Kabriolet";
+34: samochod = "Komunikacja miejska, tez jest w porzadku" if 
+	typ_samochodu="Najtanszy";
+35: samochod = "Nie udalo sie znalezc samochodu, typu SUV o podanych atrybutach" if
+	typ_samochodu="SUV";
+
+36: samochod = "Nie udalo sie znalezc samochodu, typu Kompakt o podanych atrybutach" if 
+	typ_samochodu="Kompakt";
+
+
+
+
+end;
+
+	control
+	 run;
+	 vignette ("Samochody", "System ekspertowy pomagajacy w wyborze samochodu do ok. 20000 zl", "Kamil Polacik, Aleksandra Kanska - Grupa IO 1");
+	setAppWinTitle("Pomoc w wyborze samochodu");
+	menu "Program"
+	1. "Uruchom pomoc w wyborze"
+	2. "Wyjscie z programu"
+	case 1:
+	 setSysText(problem, "Szukanie samochodu");
+	 goal ("samochod=Samochod");
+	 delNewFacts;
+	case 2:
+	 exit;
+	end;
+end;
+end;
